@@ -1,7 +1,5 @@
 ## 1. ESPECIFICACIÓN DE OBJETIVO:
 
-&nbsp;
-
 ### **`nmap -iL targets.txt scanme.nmap.org`**
 > Este comando lee una lista de sistemas o redes del archivo especificado en targets.txt y los utiliza como objetivos para el escaneo en scanme.nmap.org.
 
@@ -65,8 +63,6 @@ Este comando es útil cuando deseas excluir múltiples sistemas o redes del esca
 
 
 ## 2. DESCUBRIMIENTO DE HOSTS:
-
-&nbsp;
 
 ### **`nmap -sL scanme.nmap.org`**
 > Este comando simplemente lista los objetivos a analizar sin realizar un escaneo real.
@@ -224,9 +220,7 @@ Puedes utilizar este comando cuando deseas utilizar los servidores DNS configura
 
 
 
-## 3. TÉCNICAS DE ANÁLISIS
-
-&nbsp;
+## 3. TÉCNICAS DE ANÁLISIS:
 
 ### **`nmap -sS/sT/sA/sW/sM scanme.nmap.org`**
 > Estos comandos realizan diferentes tipos de escaneos TCP SYN, TCP Connect, TCP ACK, TCP Window, y TCP Maimon.
@@ -294,9 +288,58 @@ de los sistemas** objetivo.
 
 **Casos de uso:** Puedes utilizar este comando en situaciones donde necesites mantener el anonimato durante el escaneo y utilizar un servidor FTP como intermediario para enviar los paquetes de escaneo.
 
+&nbsp;
 
 
 
+
+## 4. ESPECIFICACIÓN DE PUERTOS Y ORDEN DE ANALISIS:
+
+**`nmap -p <rango de puertos> scanme.nmap.org`**
+
+> Esta opción permite especificar un rango de puertos a sondear en el objetivo. Puedes indicar un solo puerto, un rango de puertos separados por guiones o una combinación de ambos.
+
+**Dato curioso:** Nmap utiliza por defecto los 1000 puertos más comunes, conocidos como "puertos bien conocidos". Sin embargo, existen más de 65,535 puertos posibles en un sistema, por lo que esta opción te permite personalizar el análisis y enfocarte solo en los puertos de interés.
+
+**Para qué:** Utilizar esta opción es útil cuando deseas escanear una lista específica de puertos en lugar de todos los puertos posibles. Puede ayudarte a identificar servicios específicos que podrían estar en ejecución en esos puertos y evaluar la seguridad de los servicios correspondientes.
+
+**Casos de uso:**
+
+Identificar puertos abiertos en un objetivo para realizar una auditoría de seguridad.
+Verificar si un puerto específico está abierto o cerrado en un sistema remoto.
+Analizar la configuración de firewall o enrutadores al escanear puertos específicos.
+
+&nbsp;
+
+**`nmap -F scanme.nmap.org`**
+
+> Esta opción realiza un escaneo rápido de puertos. Analiza los 100 puertos más comunes en lugar de los 1000 puertos por defecto.
+
+**Dato curioso:** La opción -F es una forma rápida de obtener una visión general de los puertos más comúnmente utilizados en un objetivo. Puede ahorrar tiempo al realizar un escaneo inicial y proporcionar información relevante sobre los servicios disponibles.
+
+**Para qué:** Utilizar esta opción puede ser útil cuando deseas realizar un análisis rápido de los servicios más comunes en un objetivo y obtener una idea general de su configuración de seguridad. Es especialmente útil cuando se dispone de poco tiempo o se necesita un escaneo rápido.
+
+**Casos de uso:**
+
+Realizar un escaneo inicial de puertos en un objetivo desconocido.
+Obtener una visión general rápida de los servicios expuestos en una red.
+Identificar posibles vulnerabilidades en los servicios más comunes.
+
+&nbsp;
+
+**`nmap -r scanme.nmap.org`**
+
+> Esta opción activa la resolución inversa DNS durante el escaneo. Intenta determinar los nombres de host asociados a las direcciones IP encontradas.
+
+**Dato curioso:** La resolución inversa DNS es el proceso de encontrar el nombre de host asociado a una dirección IP. Nmap utiliza esta opción para proporcionar información adicional sobre los objetivos escaneados, lo que puede ayudar a identificar mejor los sistemas y su ubicación.
+
+**Para qué:** La opción -r es útil cuando se desea obtener información adicional sobre los objetivos escaneados, como los nombres de host asociados a las direcciones IP. Esto puede ser útil para reconocimiento de red, análisis de infraestructura y mapeo de sistemas.
+
+**Casos de uso:**
+
+Obtener una lista de nombres de host asociados a direcciones IP en una red.
+Identificar sistemas y su ubicación geográfica mediante resolución inversa DNS.
+Realizar análisis de infraestructura y mapeo de sistemas más detallado.
 
 
 
