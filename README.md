@@ -1,56 +1,220 @@
-# NmapDailyPractice
+## 1. ESPECIFICACIÓN DE OBJETIVO:
 
-### `nmap -iL targets.txt scanme.nmap.org`
+&nbsp;
 
-Este comando lee una lista de sistemas o redes del archivo especificado en targets.txt y los utiliza como objetivos para el escaneo en scanme.nmap.org.
+**`nmap -iL targets.txt scanme.nmap.org`**
+> Este comando lee una lista de sistemas o redes del archivo especificado en targets.txt y los utiliza como objetivos para el escaneo en scanme.nmap.org.
 
 **Dato curioso:**
-
 Puedes crear un archivo de texto con una lista de objetivos y utilizarlo como entrada para realizar escaneos en múltiples sistemas o redes de manera conveniente.
 
 **Para qué:**
-
 Este comando es útil cuando deseas realizar un escaneo en varios objetivos diferentes y no quieres especificarlos manualmente en el comando.
-Casos de uso: Puedes utilizar este comando para escanear una lista predefinida de sistemas o redes, como un grupo de servidores en una infraestructura de red.
-
-### `nmap -iR 10 scanme.nmap.org`
-
-Este comando selecciona al azar 10 objetivos y los utiliza para el escaneo en scanme.nmap.org.
-
-**Dato curioso:**
-
-La opción -iR permite seleccionar objetivos al azar, lo que puede ser útil para realizar escaneos en un conjunto diverso de sistemas o redes de forma aleatoria.
-Para qué: Este comando es útil cuando deseas realizar escaneos en objetivos seleccionados al azar para fines de pruebas o evaluaciones de seguridad.
 
 **Casos de uso:**
+Puedes utilizar este comando para escanear una lista predefinida de sistemas o redes, como un grupo de servidores en una infraestructura de red.
 
-Puedes utilizar este comando para realizar escaneos en una muestra aleatoria de sistemas o redes dentro de una organización, para evaluar su seguridad y detectar posibles vulnerabilidades.
+&nbsp;
 
-### `nmap --exclude 192.168.0.1,192.168.0.2 scanme.nmap.org`
+**`nmap -iR 10 scanme.nmap.org`**
 
-Este comando realiza un escaneo en scanme.nmap.org, excluyendo los sistemas o redes especificados (en este caso, 192.168.0.1 y 192.168.0.2).
+> Este comando selecciona al azar 10 objetivos y los utiliza para el escaneo en scanme.nmap.org.
 
 **Dato curioso:**
+La opción -iR permite seleccionar objetivos al azar, lo que puede ser útil para realizar escaneos en un conjunto diverso de sistemas o redes de forma aleatoria.
 
+**Para qué:**
+Este comando es útil cuando deseas realizar escaneos en objetivos seleccionados al azar para fines de pruebas o evaluaciones de seguridad.
+
+**Casos de uso:**
+Puedes utilizar este comando para realizar escaneos en una muestra aleatoria de sistemas o redes dentro de una organización, para evaluar su seguridad y detectar posibles vulnerabilidades.
+
+&nbsp;
+
+**`nmap --exclude 192.168.0.1,192.168.0.2 scanme.nmap.org`**
+
+> Este comando realiza un escaneo en scanme.nmap.org, excluyendo los sistemas o redes especificados (en este caso, 192.168.0.1 y 192.168.0.2).
+
+**Dato curioso:**
 La opción --exclude te permite excluir sistemas o redes específicos del escaneo, lo cual puede ser útil cuando deseas evitar ciertos objetivos o segmentos de red.
 
 **Para qué:**
 Este comando es útil cuando deseas realizar un escaneo en scanme.nmap.org, pero deseas excluir ciertos sistemas o redes específicas de ese escaneo.
-Casos de uso: Puedes utilizar este comando para realizar escaneos en una red que contiene sistemas o segmentos de red que no deseas incluir en el análisis, como sistemas críticos o redes aisladas.
 
-### ``nmap --excludefile excluded.txt scanme.nmap.org``
+**Casos de uso:**
+Puedes utilizar este comando para realizar escaneos en una red que contiene sistemas o segmentos de red que no deseas incluir en el análisis, como sistemas críticos o redes aisladas.
 
-Este comando realiza un escaneo en scanme.nmap.org, excluyendo los sistemas o redes especificados en el archivo excluded.txt.
+
+&nbsp;
+
+**`nmap --excludefile excluded.txt scanme.nmap.org`**
+
+> Este comando realiza un escaneo en scanme.nmap.org, excluyendo los sistemas o redes especificados en el archivo excluded.txt.
 
 **Dato curioso:**
-
 La opción --excludefile te permite especificar un archivo que contiene una lista de sistemas o redes a excluir del escaneo, lo cual proporciona flexibilidad en la configuración de exclusiones.
 
 **Para qué:**
-
 Este comando es útil cuando deseas excluir múltiples sistemas o redes del escaneo en scanme.nmap.org y prefieres mantener esa lista de exclusión en un archivo separado.
 
+**Casos de uso:** Puedes utilizar este comando para realizar escaneos en scanme.nmap.org, excluyendo una lista específica de sistemas o redes que están definidos en el archivo excluded.txt. Esto es especialmente útil cuando tienes una lista extensa de exclusiones o cuando deseas reutilizar la lista en diferentes escaneos.
 
+&nbsp;
+
+## 2. DESCUBRIMIENTO DE HOSTS:
+
+&nbsp;
+
+**`nmap -sL scanme.nmap.org`**
+> Este comando simplemente lista los objetivos a analizar sin realizar un escaneo real.
+
+**Dato curioso:**
+
+El sondeo de lista es útil para obtener una visión general de los objetivos sin realizar un escaneo real.
+
+**Para qué:**
+
+Este comando es útil para verificar y seleccionar los objetivos adecuados antes de realizar un escaneo completo.
+
+**Casos de uso:**
+
+Puede ser utilizado para identificar rápidamente los objetivos disponibles en una red y decidir qué objetivos escanear con mayor detalle.
+
+
+&nbsp;
+
+**`nmap -sP scanme.nmap.org`**
+> Este comando realiza un escaneo de ping para determinar qué objetivos están activos sin realizar un escaneo de puertos.
+
+**Dato curioso:**
+
+El escaneo de ping es útil para descubrir qué sistemas o redes están en línea y disponibles para el escaneo posterior de puertos.
+
+**Para qué:**
+
+Este comando es útil cuando deseas identificar rápidamente los sistemas activos en una red sin realizar un escaneo exhaustivo de puertos.
+
+**Casos de uso:**
+
+Puede ser utilizado para mapear rápidamente la disponibilidad de sistemas en una red y determinar qué sistemas son accesibles para escaneos posteriores.
+
+
+&nbsp;
+
+**`nmap -P0 scanme.nmap.org`**
+> Este comando realiza un escaneo sin enviar pings de descubrimiento, asumiendo que todos los objetivos están activos.
+
+**Dato curioso:**
+
+El uso de la opción -P0 suprime el escaneo de ping y asume que todos los objetivos están activos, lo cual puede ser útil en casos donde el filtrado ICMP o la respuesta a pings está deshabilitada.
+
+**Para qué:**
+
+Este comando es útil cuando deseas realizar un escaneo completo de puertos sin depender de la respuesta a pings para determinar la disponibilidad del objetivo.
+Casos de uso: Puede ser utilizado cuando los sistemas o redes objetivo no responden a pings o cuando el filtrado ICMP está activo y deseas realizar un escaneo de puertos sin depender de la respuesta a pings.
+
+
+&nbsp;
+
+**`nmap -PS/PA/PU -p <puerto> scanme.nmap.org`**
+> Estos comandos realizan un escaneo TCP SYN/ACK/UDP para el puerto especificado en scanme.nmap.org.
+
+**Dato curioso:**
+
+Los escaneos TCP SYN/ACK/UDP son técnicas de escaneo de puertos específicas que permiten determinar el estado de los puertos (abiertos, cerrados, filtrados) utilizando diferentes tipos de paquetes.
+
+**Para qué:**
+
+Estos comandos son útiles cuando deseas determinar el estado de un puerto específico en un objetivo y obtener información sobre si está abierto, cerrado o filtrado.
+Casos de uso: Puedes utilizar estos comandos para identificar el estado de un puerto específico en un sistema objetivo y evaluar la seguridad y configuración de los servicios que se ejecutan en ese puerto.
+
+
+&nbsp;
+
+**`nmap -PE/PP/PM scanme.nmap.org`**
+> Estos comandos realizan un escaneo ICMP Echo Request (ping) para el descubrimiento de sistemas activos en scanme.nmap.org.
+
+**Dato curioso:**
+
+Los escaneos ICMP Echo Request son útiles para determinar qué sistemas están activos en la red y disponibles para escaneos posteriores.
+
+**Para qué:**
+
+Estos comandos son útiles cuando deseas realizar un escaneo de descubrimiento para identificar sistemas activos mediante el envío de pings y obtener respuestas ICMP.
+
+**Casos de uso:**
+
+Puedes utilizar estos comandos para descubrir sistemas activos en una red y recopilar información sobre su disponibilidad antes de realizar escaneos más exhaustivos.
+
+
+&nbsp;
+
+**`nmap -n scanme.nmap.org`**
+> Este comando realiza un escaneo sin resolución de DNS inversa para no obtener los nombres de host de los objetivos.
+
+**Dato curioso:**
+
+La opción -n desactiva la resolución de DNS inversa, lo cual puede acelerar el escaneo y reducir la cantidad de solicitudes DNS realizadas durante el proceso.
+
+**Para qué:**
+
+Este comando es útil cuando deseas realizar un escaneo rápido y no necesitas obtener los nombres de host asociados a las direcciones IP delos objetivos escaneados.
+
+**Casos de uso:** Puedes utilizar este comando cuando deseas obtener resultados de escaneo más rápidos al omitir la resolución de DNS inversa, especialmente en escenarios donde la resolución de nombres de host no es relevante para tu análisis.
+
+
+&nbsp;
+
+**`nmap -R scanme.nmap.org`**
+> Este comando realiza un escaneo con resolución de DNS inversa, intentando obtener los nombres de host asociados a las direcciones IP de los objetivos.
+
+**Dato curioso:**
+
+La opción -R activa la resolución de DNS inversa, lo cual puede proporcionar información adicional sobre los nombres de host de los objetivos escaneados.
+
+**Para qué:**
+
+Este comando es útil cuando deseas obtener los nombres de host asociados a las direcciones IP de los objetivos escaneados, lo que puede ayudar en la identificación y el análisis posterior.
+
+**Casos de uso:**
+
+Puedes utilizar este comando cuando deseas obtener información detallada sobre los nombres de host asociados a las direcciones IP de los objetivos, lo que puede ser útil para el análisis de la infraestructura de red y la identificación de sistemas específicos.
+
+
+&nbsp;
+
+**`nmap --dns-servers <servidores DNS> scanme.nmap.org`**
+> Este comando realiza un escaneo utilizando servidores DNS personalizados en lugar de los servidores DNS predeterminados del sistema.
+
+**Dato curioso:**
+
+La opción --dns-servers te permite especificar los servidores DNS a utilizar durante el escaneo, lo cual puede ser útil para escenarios donde deseas utilizar servidores DNS específicos o evitar la resolución DNS predeterminada.
+
+**Para qué:**
+
+Este comando es útil cuando deseas utilizar servidores DNS personalizados durante el escaneo, lo que te brinda control sobre la resolución de nombres de host y la interacción con los servidores DNS.
+
+**Casos de uso:**
+
+Puedes utilizar este comando cuando deseas realizar escaneos utilizando servidores DNS específicos o cuando necesitas evitar la resolución de nombres de host utilizando los servidores DNS predeterminados del sistema.
+
+
+&nbsp;
+
+**`nmap --system-dns scanme.nmap.org`**
+> Este comando realiza un escaneo utilizando los servidores DNS predeterminados del sistema para la resolución de nombres de host.
+
+**Dato curioso:**
+
+La opción --system-dns utiliza los servidores DNS configurados en el sistema operativo para la resolución de nombres de host durante el escaneo.
+
+**Para qué:**
+
+Este comando es útil cuando deseas utilizar los servidores DNS predeterminados del sistema para la resolución de nombres de host durante el escaneo, en lugar de especificar servidores DNS personalizados.
+
+**Casos de uso:**
+
+Puedes utilizar este comando cuando deseas utilizar los servidores DNS configurados en el sistema operativo para la resolución de nombres de host durante el escaneo, lo que te permite aprovechar la configuración DNS existente en el sistema.
 
 
 
