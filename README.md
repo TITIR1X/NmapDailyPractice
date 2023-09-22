@@ -62,6 +62,10 @@ Este comando es útil cuando deseas excluir múltiples sistemas o redes del esca
 
 
 
+
+
+
+
 ## 2. DESCUBRIMIENTO DE HOSTS:
 
 ### **`nmap -sL scanme.nmap.org`**
@@ -72,11 +76,9 @@ Este comando es útil cuando deseas excluir múltiples sistemas o redes del esca
 El sondeo de lista es útil para obtener una visión general de los objetivos sin realizar un escaneo real.
 
 **Para qué:**
-
 Este comando es útil para verificar y seleccionar los objetivos adecuados antes de realizar un escaneo completo.
 
 **Casos de uso:**
-
 Puede ser utilizado para identificar rápidamente los objetivos disponibles en una red y decidir qué objetivos escanear con mayor detalle.
 
 
@@ -86,15 +88,12 @@ Puede ser utilizado para identificar rápidamente los objetivos disponibles en u
 > Este comando realiza un escaneo de ping para determinar qué objetivos están activos sin realizar un escaneo de puertos.
 
 **Dato curioso:**
-
 El escaneo de ping es útil para descubrir qué sistemas o redes están en línea y disponibles para el escaneo posterior de puertos.
 
 **Para qué:**
-
 Este comando es útil cuando deseas identificar rápidamente los sistemas activos en una red sin realizar un escaneo exhaustivo de puertos.
 
 **Casos de uso:**
-
 Puede ser utilizado para mapear rápidamente la disponibilidad de sistemas en una red y determinar qué sistemas son accesibles para escaneos posteriores.
 
 
@@ -104,9 +103,7 @@ Puede ser utilizado para mapear rápidamente la disponibilidad de sistemas en un
 > Este comando realiza un escaneo sin enviar pings de descubrimiento, asumiendo que todos los objetivos están activos.
 
 **Dato curioso:**
-
 El uso de la opción -P0 suprime el escaneo de ping y asume que todos los objetivos están activos, lo cual puede ser útil en casos donde el filtrado ICMP o la respuesta a pings está deshabilitada.
-
 **Para qué:**
 
 Este comando es útil cuando deseas realizar un escaneo completo de puertos sin depender de la respuesta a pings para determinar la disponibilidad del objetivo.
@@ -119,11 +116,9 @@ Casos de uso: Puede ser utilizado cuando los sistemas o redes objetivo no respon
 > Estos comandos realizan un escaneo TCP SYN/ACK/UDP para el puerto especificado en scanme.nmap.org.
 
 **Dato curioso:**
-
 Los escaneos TCP SYN/ACK/UDP son técnicas de escaneo de puertos específicas que permiten determinar el estado de los puertos (abiertos, cerrados, filtrados) utilizando diferentes tipos de paquetes.
 
 **Para qué:**
-
 Estos comandos son útiles cuando deseas determinar el estado de un puerto específico en un objetivo y obtener información sobre si está abierto, cerrado o filtrado.
 Casos de uso: Puedes utilizar estos comandos para identificar el estado de un puerto específico en un sistema objetivo y evaluar la seguridad y configuración de los servicios que se ejecutan en ese puerto.
 
@@ -134,15 +129,12 @@ Casos de uso: Puedes utilizar estos comandos para identificar el estado de un pu
 > Estos comandos realizan un escaneo ICMP Echo Request (ping) para el descubrimiento de sistemas activos en scanme.nmap.org.
 
 **Dato curioso:**
-
 Los escaneos ICMP Echo Request son útiles para determinar qué sistemas están activos en la red y disponibles para escaneos posteriores.
 
 **Para qué:**
-
 Estos comandos son útiles cuando deseas realizar un escaneo de descubrimiento para identificar sistemas activos mediante el envío de pings y obtener respuestas ICMP.
 
 **Casos de uso:**
-
 Puedes utilizar estos comandos para descubrir sistemas activos en una red y recopilar información sobre su disponibilidad antes de realizar escaneos más exhaustivos.
 
 
@@ -152,14 +144,13 @@ Puedes utilizar estos comandos para descubrir sistemas activos en una red y reco
 > Este comando realiza un escaneo sin resolución de DNS inversa para no obtener los nombres de host de los objetivos.
 
 **Dato curioso:**
-
 La opción -n desactiva la resolución de DNS inversa, lo cual puede acelerar el escaneo y reducir la cantidad de solicitudes DNS realizadas durante el proceso.
 
 **Para qué:**
-
 Este comando es útil cuando deseas realizar un escaneo rápido y no necesitas obtener los nombres de host asociados a las direcciones IP delos objetivos escaneados.
 
-**Casos de uso:** Puedes utilizar este comando cuando deseas obtener resultados de escaneo más rápidos al omitir la resolución de DNS inversa, especialmente en escenarios donde la resolución de nombres de host no es relevante para tu análisis.
+**Casos de uso:**
+Puedes utilizar este comando cuando deseas obtener resultados de escaneo más rápidos al omitir la resolución de DNS inversa, especialmente en escenarios donde la resolución de nombres de host no es relevante para tu análisis.
 
 
 &nbsp;
@@ -168,15 +159,12 @@ Este comando es útil cuando deseas realizar un escaneo rápido y no necesitas o
 > Este comando realiza un escaneo con resolución de DNS inversa, intentando obtener los nombres de host asociados a las direcciones IP de los objetivos.
 
 **Dato curioso:**
-
 La opción -R activa la resolución de DNS inversa, lo cual puede proporcionar información adicional sobre los nombres de host de los objetivos escaneados.
 
 **Para qué:**
-
 Este comando es útil cuando deseas obtener los nombres de host asociados a las direcciones IP de los objetivos escaneados, lo que puede ayudar en la identificación y el análisis posterior.
 
 **Casos de uso:**
-
 Puedes utilizar este comando cuando deseas obtener información detallada sobre los nombres de host asociados a las direcciones IP de los objetivos, lo que puede ser útil para el análisis de la infraestructura de red y la identificación de sistemas específicos.
 
 
@@ -186,15 +174,12 @@ Puedes utilizar este comando cuando deseas obtener información detallada sobre 
 > Este comando realiza un escaneo utilizando servidores DNS personalizados en lugar de los servidores DNS predeterminados del sistema.
 
 **Dato curioso:**
-
 La opción --dns-servers te permite especificar los servidores DNS a utilizar durante el escaneo, lo cual puede ser útil para escenarios donde deseas utilizar servidores DNS específicos o evitar la resolución DNS predeterminada.
 
 **Para qué:**
-
 Este comando es útil cuando deseas utilizar servidores DNS personalizados durante el escaneo, lo que te brinda control sobre la resolución de nombres de host y la interacción con los servidores DNS.
 
 **Casos de uso:**
-
 Puedes utilizar este comando cuando deseas realizar escaneos utilizando servidores DNS específicos o cuando necesitas evitar la resolución de nombres de host utilizando los servidores DNS predeterminados del sistema.
 
 
@@ -204,18 +189,19 @@ Puedes utilizar este comando cuando deseas realizar escaneos utilizando servidor
 > Este comando realiza un escaneo utilizando los servidores DNS predeterminados del sistema para la resolución de nombres de host.
 
 **Dato curioso:**
-
 La opción --system-dns utiliza los servidores DNS configurados en el sistema operativo para la resolución de nombres de host durante el escaneo.
 
 **Para qué:**
-
 Este comando es útil cuando deseas utilizar los servidores DNS predeterminados del sistema para la resolución de nombres de host durante el escaneo, en lugar de especificar servidores DNS personalizados.
 
 **Casos de uso:**
-
 Puedes utilizar este comando cuando deseas utilizar los servidores DNS configurados en el sistema operativo para la resolución de nombres de host durante el escaneo, lo que te permite aprovechar la configuración DNS existente en el sistema.
 
 &nbsp;
+
+
+
+
 
 
 
@@ -225,33 +211,42 @@ Puedes utilizar este comando cuando deseas utilizar los servidores DNS configura
 ### **`nmap -sS/sT/sA/sW/sM scanme.nmap.org`**
 > Estos comandos realizan diferentes tipos de escaneos TCP SYN, TCP Connect, TCP ACK, TCP Window, y TCP Maimon.
 
-**Dato curioso:** Cada opción (-sS, -sT, -sA, -sW, -sM) representa un tipo de escaneo TCP diferente, que tiene sus propias características y finalidades.
+**Dato curioso:**
+Cada opción (-sS, -sT, -sA, -sW, -sM) representa un tipo de escaneo TCP diferente, que tiene sus propias características y finalidades.
 
-**Para qué:** Estos comandos son útiles para realizar diferentes tipos de escaneos TCP y obtener información específica sobre los puertos y servicios en los objetivos.
+**Para qué:**
+Estos comandos son útiles para realizar diferentes tipos de escaneos TCP y obtener información específica sobre los puertos y servicios en los objetivos.
 
-**Casos de uso:** Puedes utilizar estos comandos para evaluar la seguridad de los sistemas y servicios en una red y descubrir posibles vulnerabilidades o configuraciones incorrectas.
+**Casos de uso:**
+Puedes utilizar estos comandos para evaluar la seguridad de los sistemas y servicios en una red y descubrir posibles vulnerabilidades o configuraciones incorrectas.
 
 &nbsp;
 
 ### **`nmap -sN/sF/sX scanme.nmap.org`**
 > Estos comandos realizan diferentes tipos de escaneos TCP Null, TCP FIN, y TCP Xmas.
 
-**Dato curioso:** Cada opción (-sN, -sF, -sX) representa un tipo de escaneo TCP específico que envía paquetes sin establecer banderas TCP.
+**Dato curioso:**
+Cada opción (-sN, -sF, -sX) representa un tipo de escaneo TCP específico que envía paquetes sin establecer banderas TCP.
 
-**Para qué:** Estos comandos son útiles para realizar escaneos TCP sin establecer banderas TCP específicas y evaluar la respuesta de los sistemas objetivo.
+**Para qué:**
+Estos comandos son útiles para realizar escaneos TCP sin establecer banderas TCP específicas y evaluar la respuesta de los sistemas objetivo.
 
-**Casos de uso:** Puedes utilizar estos comandos para identificar cómo los sistemas objetivo responden a paquetes sin banderas TCP establecidas, lo cual puede revelar información sobre la configuración y la protección de los sistemas.
+**Casos de uso:**
+Puedes utilizar estos comandos para identificar cómo los sistemas objetivo responden a paquetes sin banderas TCP establecidas, lo cual puede revelar información sobre la configuración y la protección de los sistemas.
 
 &nbsp;
 
 ### **`nmap --scanflags <indicador> scanme.nmap.org`**
 > Este comando permite especificar banderas TCP personalizadas para el escaneo.
 
-**Dato curioso:** La opción --scanflags te permite establecer banderas TCP específicas en los paquetes enviados durante el escaneo.
+**Dato curioso:**
+La opción --scanflags te permite establecer banderas TCP específicas en los paquetes enviados durante el escaneo.
 
-**Para qué:** Esta opción es útil cuando deseas personalizar las banderas TCP utilizadas en el escaneo y evaluar la respuesta de los sistemas objetivo a configuraciones específicas de banderas TCP.
+**Para qué:**
+Esta opción es útil cuando deseas personalizar las banderas TCP utilizadas en el escaneo y evaluar la respuesta de los sistemas objetivo a configuraciones específicas de banderas TCP.
 
-**Casos de uso:** Puedes utilizar esta opción para simular diferentes escenarios de configuración de banderas TCP y evaluar cómo los sistemas objetivo responden a ellos.
+**Casos de uso:**
+Puedes utilizar esta opción para simular diferentes escenarios de configuración de banderas TCP y evaluar cómo los sistemas objetivo responden a ellos.
 
 &nbsp;
 
@@ -259,93 +254,158 @@ Puedes utilizar este comando cuando deseas utilizar los servidores DNS configura
 
 > Este comando realiza un escaneo utilizando un sistema zombi como intermediario para ocultar la identidad del escáner.
 
-**Dato curioso:** El uso de un sistema zombi como intermediario puede ayudar a ocultar la identidad del escáner y evitar la detección o el bloqueo por parte **
+**Dato curioso:**
+El uso de un sistema zombi como intermediario puede ayudar a ocultar la identidad del escáner y evitar la detección o el bloqueo por parte **
 de los sistemas** objetivo.
 
-**Para qué:** Este comando es útil cuando deseas realizar un escaneo sin revelar tu propia identidad y utilizar un sistema intermediario para enviar los paquetes de escaneo.
+**Para qué:**
+Este comando es útil cuando deseas realizar un escaneo sin revelar tu propia identidad y utilizar un sistema intermediario para enviar los paquetes de escaneo.
 
-**Casos de uso:** Puedes utilizar este comando en situaciones donde necesites mantener el anonimato durante el escaneo y evitar ser bloqueado o detectado por los sistemas objetivo.
+**Casos de uso:**
+Puedes utilizar este comando en situaciones donde necesites mantener el anonimato durante el escaneo y evitar ser bloqueado o detectado por los sistemas objetivo.
 
 &nbsp;
 
 ### **`nmap -sO scanme.nmap.org`**
 > Este comando realiza un escaneo de detección de protocolos para identificar los protocolos admitidos por los sistemas objetivo.
 
-**Dato curioso:** El escaneo de detección de protocolos permite identificar los protocolos de capa 3 (IP) y capa 4 (TCP, UDP) que los sistemas objetivo admiten.
+**Dato curioso:**
+El escaneo de detección de protocolos permite identificar los protocolos de capa 3 (IP) y capa 4 (TCP, UDP) que los sistemas objetivo admiten.
 
-**Para qué:** Este comando es útil cuando deseas obtener información sobre los protocolos que los sistemas objetivo admiten y evaluar la configuración de red.
+**Para qué:**
+Este comando es útil cuando deseas obtener información sobre los protocolos que los sistemas objetivo admiten y evaluar la configuración de red.
 
-**Casos de uso:** Puedes utilizar este comando para descubrir y evaluar los protocolos de red utilizados en una red objetivo, lo que puede ser útil para fines de auditoría o resolución de problemas.
+**Casos de uso:**
+Puedes utilizar este comando para descubrir y evaluar los protocolos de red utilizados en una red objetivo, lo que puede ser útil para fines de auditoría o resolución de problemas.
 
 &nbsp;
 
 ### **`nmap -b <servidor ftp rebote> scanme.nmap.org`**
 > Este comando realiza un escaneo utilizando un servidor FTP rebote como intermediario para enviar los paquetes de escaneo.
 
-**Dato curioso:** El uso de un servidor FTP rebote permite enviar los paquetes de escaneo a través de un servidor FTP y ocultar la identidad del escáner.
+**Dato curioso:**
+El uso de un servidor FTP rebote permite enviar los paquetes de escaneo a través de un servidor FTP y ocultar la identidad del escáner.
 
-**Para qué:** Este comando es útil cuando deseas realizar un escaneo utilizando un servidor FTP rebote y ocultar tu propia identidad durante el escaneo.
+**Para qué:**
+Este comando es útil cuando deseas realizar un escaneo utilizando un servidor FTP rebote y ocultar tu propia identidad durante el escaneo.
 
-**Casos de uso:** Puedes utilizar este comando en situaciones donde necesites mantener el anonimato durante el escaneo y utilizar un servidor FTP como intermediario para enviar los paquetes de escaneo.
+**Casos de uso:**
+Puedes utilizar este comando en situaciones donde necesites mantener el anonimato durante el escaneo y utilizar un servidor FTP como intermediario para enviar los paquetes de escaneo.
 
 &nbsp;
+
+
+
+
 
 
 
 
 ## 4. ESPECIFICACIÓN DE PUERTOS Y ORDEN DE ANALISIS:
 
-**`nmap -p <rango de puertos> scanme.nmap.org`**
+### **`nmap -p <rango de puertos> scanme.nmap.org`**
 
 > Esta opción permite especificar un rango de puertos a sondear en el objetivo. Puedes indicar un solo puerto, un rango de puertos separados por guiones o una combinación de ambos.
 
-**Dato curioso:** Nmap utiliza por defecto los 1000 puertos más comunes, conocidos como "puertos bien conocidos". Sin embargo, existen más de 65,535 puertos posibles en un sistema, por lo que esta opción te permite personalizar el análisis y enfocarte solo en los puertos de interés.
+**Dato curioso:**
+Nmap utiliza por defecto los 1000 puertos más comunes, conocidos como "puertos bien conocidos". Sin embargo, existen más de 65,535 puertos posibles en un sistema, por lo que esta opción te permite personalizar el análisis y enfocarte solo en los puertos de interés.
 
-**Para qué:** Utilizar esta opción es útil cuando deseas escanear una lista específica de puertos en lugar de todos los puertos posibles. Puede ayudarte a identificar servicios específicos que podrían estar en ejecución en esos puertos y evaluar la seguridad de los servicios correspondientes.
+**Para qué:**
+Utilizar esta opción es útil cuando deseas escanear una lista específica de puertos en lugar de todos los puertos posibles. Puede ayudarte a identificar servicios específicos que podrían estar en ejecución en esos puertos y evaluar la seguridad de los servicios correspondientes.
 
 **Casos de uso:**
-
-Identificar puertos abiertos en un objetivo para realizar una auditoría de seguridad.
-Verificar si un puerto específico está abierto o cerrado en un sistema remoto.
-Analizar la configuración de firewall o enrutadores al escanear puertos específicos.
+- Identificar puertos abiertos en un objetivo para realizar una auditoría de seguridad.
+- Verificar si un puerto específico está abierto o cerrado en un sistema remoto.
+- Analizar la configuración de firewall o enrutadores al escanear puertos específicos.
 
 &nbsp;
 
-**`nmap -F scanme.nmap.org`**
+### **`nmap -F scanme.nmap.org`**
 
 > Esta opción realiza un escaneo rápido de puertos. Analiza los 100 puertos más comunes en lugar de los 1000 puertos por defecto.
 
-**Dato curioso:** La opción -F es una forma rápida de obtener una visión general de los puertos más comúnmente utilizados en un objetivo. Puede ahorrar tiempo al realizar un escaneo inicial y proporcionar información relevante sobre los servicios disponibles.
+**Dato curioso:**
+La opción -F es una forma rápida de obtener una visión general de los puertos más comúnmente utilizados en un objetivo. Puede ahorrar tiempo al realizar un escaneo inicial y proporcionar información relevante sobre los servicios disponibles.
 
-**Para qué:** Utilizar esta opción puede ser útil cuando deseas realizar un análisis rápido de los servicios más comunes en un objetivo y obtener una idea general de su configuración de seguridad. Es especialmente útil cuando se dispone de poco tiempo o se necesita un escaneo rápido.
+**Para qué:**
+Utilizar esta opción puede ser útil cuando deseas realizar un análisis rápido de los servicios más comunes en un objetivo y obtener una idea general de su configuración de seguridad. Es especialmente útil cuando se dispone de poco tiempo o se necesita un escaneo rápido.
 
 **Casos de uso:**
-
-Realizar un escaneo inicial de puertos en un objetivo desconocido.
-Obtener una visión general rápida de los servicios expuestos en una red.
-Identificar posibles vulnerabilidades en los servicios más comunes.
+- Realizar un escaneo inicial de puertos en un objetivo desconocido.
+- Obtener una visión general rápida de los servicios expuestos en una red.
+- Identificar posibles vulnerabilidades en los servicios más comunes.
 
 &nbsp;
 
-**`nmap -r scanme.nmap.org`**
+### **`nmap -r scanme.nmap.org`**
 
 > Esta opción activa la resolución inversa DNS durante el escaneo. Intenta determinar los nombres de host asociados a las direcciones IP encontradas.
 
-**Dato curioso:** La resolución inversa DNS es el proceso de encontrar el nombre de host asociado a una dirección IP. Nmap utiliza esta opción para proporcionar información adicional sobre los objetivos escaneados, lo que puede ayudar a identificar mejor los sistemas y su ubicación.
+**Dato curioso:**
+La resolución inversa DNS es el proceso de encontrar el nombre de host asociado a una dirección IP. Nmap utiliza esta opción para proporcionar información adicional sobre los objetivos escaneados, lo que puede ayudar a identificar mejor los sistemas y su ubicación.
 
-**Para qué:** La opción -r es útil cuando se desea obtener información adicional sobre los objetivos escaneados, como los nombres de host asociados a las direcciones IP. Esto puede ser útil para reconocimiento de red, análisis de infraestructura y mapeo de sistemas.
+**Para qué:**
+La opción -r es útil cuando se desea obtener información adicional sobre los objetivos escaneados, como los nombres de host asociados a las direcciones IP. Esto puede ser útil para reconocimiento de red, análisis de infraestructura y mapeo de sistemas.
 
 **Casos de uso:**
+- Obtener una lista de nombres de host asociados a direcciones IP en una red.
+- Identificar sistemas y su ubicación geográfica mediante resolución inversa DNS.
+- Realizar análisis de infraestructura y mapeo de sistemas más detallado.
 
-Obtener una lista de nombres de host asociados a direcciones IP en una red.
-Identificar sistemas y su ubicación geográfica mediante resolución inversa DNS.
-Realizar análisis de infraestructura y mapeo de sistemas más detallado.
-
-
-
+&nbsp;
 
 
 
+
+
+
+
+
+## 5. DETECCIÓN DE SERVICIO/VERSIÓN:
+
+
+### **`nmap -sV scanme.nmap.org`**
+> Esta opción realiza un escaneo de versiones en los puertos abiertos del objetivo. Proporciona información detallada sobre los servicios y las versiones de software que se ejecutan en esos puertos.
+
+**Dato curioso:**
+El escaneo de versiones (-sV) se basa en la comunicación con los servicios para determinar la versión del software. Sin embargo, algunos servicios pueden ocultar su versión o responder de manera engañosa para evitar ser identificados.
+
+**Para qué:**
+Esta opción es útil para obtener información valiosa sobre los servicios y las versiones de software en los puertos abiertos. Puede ayudar en la detección de vulnerabilidades conocidas y en la identificación de servicios desactualizados que pueden ser objetivos de ataques.
+
+**Casos de uso:**
+- Análisis de seguridad: El escaneo de versiones puede revelar servicios desactualizados o vulnerables que necesitan ser parcheados o asegurados.
+- Investigación de red: Proporciona información detallada sobre los servicios en ejecución, lo que puede ser útil para comprender la infraestructura de red.
+
+&nbsp;
+
+### **`nmap --version-intensity <nivel> scanme.nmap.org`**
+> Esta opción controla el nivel de intensidad del escaneo de versiones. El nivel de intensidad puede ser un número del 0 al 9, donde 0 desactiva el escaneo de versiones y 9 realiza una exploración exhaustiva.
+
+**Dato curioso:**
+Un nivel de intensidad alto (por ejemplo, 9) puede llevar más tiempo y consumir más recursos, pero proporcionará información más detallada sobre las versiones de los servicios.
+
+**Para qué:**
+Ajustar el nivel de intensidad del escaneo de versiones permite equilibrar la velocidad del escaneo y la cantidad de información recopilada. Un nivel de intensidad bajo puede ser útil para escaneos rápidos, mientras que un nivel alto puede ser beneficioso para análisis más exhaustivos.
+
+**Casos de uso:**
+- Escaneo rápido: Usar un nivel de intensidad bajo puede permitir un escaneo rápido para obtener una visión general de los servicios en ejecución.
+- Investigación en profundidad: Un nivel de intensidad alto puede ser adecuado para investigaciones más detalladas y exhaustivas al analizar a fondo los servicios y las versiones.
+
+&nbsp;
+
+### **`nmap --version-light scanme.nmap.org`**
+> Esta opción realiza un escaneo de versiones más rápido y ligero en comparación con -sV. Proporciona información básica sobre los servicios y las versiones sin realizar un escaneo exhaustivo.
+
+**Dato curioso:**
+El escaneo de versión ligera (--version-light) es útil cuando se necesita obtener información básica de manera rápida sin realizar un escaneo completo de versiones.
+
+**Para qué:**
+Esta opción es adecuada cuando se desea un escaneo rápido y ligero para obtener información básica sobre los servicios en ejecución. Puede ser útil para un análisis preliminar o cuando se tiene limitación de tiempo o recursos.
+
+**Casos de uso:**
+- Evaluación inicial: Proporciona una visión general de los servicios y las versiones en ejecución para realizar una evaluación inicial de la seguridad y la configuración de la red.
+- Escaneo rápido: Permite realizar un escaneo rápido en situaciones en las que no se requiere una información detallada de versiones, pero se necesita tener un panorama general de los servicios abiertos.
 
 
 
@@ -361,6 +421,7 @@ Realizar análisis de infraestructura y mapeo de sistemas más detallado.
 
 
 > https://svn.nmap.org/nmap/docs/nmap.usage.txt:
+
 ```
 Uso: nmap [Tipo(s) de Análisis] [Opciones] {especificación de objetivos} 
 ESPECIFICACIÓN DE OBJETIVO:
